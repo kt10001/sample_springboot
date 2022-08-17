@@ -1,0 +1,6 @@
+INSERT INTO `zyke`.`permission`(`uuid`, `parent_id`, `name`, `url`, `is_deleted`, `create_at`, `update_at`) VALUES ('a8c0cfdf-5053-a68a-17b7-ef9c6ee9f9ca', 'e753e4b1-6425-37ca-35d1-92d57a924358', '导出客户经理列表', '/zyk/admin/manager/export', 0, '2022-05-05 10:17:32', '2022-05-05 10:17:46');
+INSERT INTO `zyke`.`permission`(`uuid`, `parent_id`, `name`, `url`, `is_deleted`, `create_at`, `update_at`) VALUES ('a297f27e-a0ae-6346-42d4-4152cc015af7', 'oqutbf38-clb8-java-eb2f-7ba83e8720af', '导出进件列表', '/zyk/admin/incoming/export', 0, '2022-05-05 10:17:32', '2022-05-05 10:17:46');
+
+
+INSERT INTO `zyke`.`role_permission`(`role_uuid`, `permission_uuid`, `is_deleted`, `create_at`, `update_at`) VALUES ('1c7be48d-ca1d-11ec-9b33-0242ac110002', 'a8c0cfdf-5053-a68a-17b7-ef9c6ee9f9ca', 0, '2022-05-02 21:39:48', '2022-05-02 21:39:50');
+INSERT INTO `zyke`.`role_permission`(`role_uuid`, `permission_uuid`, `is_deleted`, `create_at`, `update_at`) VALUES ('1c7be48d-ca1d-11ec-9b33-0242ac110002', 'a297f27e-a0ae-6346-42d4-4152cc015af7', 0, '2022-05-02 21:39:48', '2022-05-02 21:39:50');
