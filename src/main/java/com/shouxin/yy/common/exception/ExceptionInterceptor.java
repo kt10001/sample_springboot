@@ -4,8 +4,6 @@ import com.shouxin.yy.common.ApiResponse;
 import com.shouxin.yy.common.RespEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.client.HttpResponseException;
-import org.apache.shiro.authz.UnauthorizedException;
-import org.crazycake.shiro.exception.PrincipalIdNullException;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
@@ -34,20 +32,6 @@ public class ExceptionInterceptor {
     public ApiResponse<?> duplicateKeyExceptionHandle(DuplicateKeyException e){
         log.info(e.getMessage(), e);
         return ApiResponse.error(RespEnum.CODE_ENTITY_EXIST.getCode(), "信息已被使用");
-    }
-
-    @ExceptionHandler(value = UnauthorizedException.class)
-    @ResponseBody
-    public ApiResponse<?> unauthorizedExceptionHandle(UnauthorizedException e){
-        log.info(e.getMessage(), e);
-        return ApiResponse.error(RespEnum.CODE_NO_AUTH.getCode(), RespEnum.CODE_NO_AUTH.getMessage());
-    }
-
-    @ExceptionHandler(value = PrincipalIdNullException.class)
-    @ResponseBody
-    public ApiResponse<?> unLoginExceptionHandle(PrincipalIdNullException e){
-        log.info(e.getMessage(), e);
-        return ApiResponse.error(RespEnum.CODE_TOKEN_ERROR.getCode(), RespEnum.CODE_TOKEN_ERROR.getMessage());
     }
 
     @ExceptionHandler(value = NullPointerException.class)
