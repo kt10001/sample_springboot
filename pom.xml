@@ -199,48 +199,12 @@
 			<artifactId>redisson-spring-boot-starter</artifactId>
 			<version>3.10.6</version>
 		</dependency>
-
-		<!--shiro-->
-		<dependency>
-			<groupId>org.apache.shiro</groupId>
-			<artifactId>shiro-spring-boot-starter</artifactId>
-			<version>1.4.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.crazycake</groupId>
-			<artifactId>shiro-redis</artifactId>
-			<version>3.1.0</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.apache.shiro</groupId>
-					<artifactId>shiro-core</artifactId>
-				</exclusion>
-				<exclusion>
-					<artifactId>guava</artifactId>
-					<groupId>com.google.guava</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<!--JWT-->
-		<dependency>
-			<groupId>com.auth0</groupId>
-			<artifactId>java-jwt</artifactId>
-			<version>3.7.0</version>
-		</dependency>
 		<!--guava-->
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
 			<version>26.0-jre</version>
-		</dependency>
-		<!-- rocketmq http连接 -->
-		<dependency>
-			<groupId>com.aliyun.mq</groupId>
-			<artifactId>mq-http-sdk</artifactId>
-			<!--以下版本号请替换为Java SDK的最新版本号-->
-			<version>1.0.3.2</version>
-			<classifier>jar-with-dependencies</classifier>
-		</dependency>
+		</dependency>=
 		<!-- aliyun oss -->
 		<dependency>
 			<groupId>com.aliyun.oss</groupId>
@@ -263,34 +227,11 @@
 			<artifactId>taobao-no-resource</artifactId>
 			<version>2021.06.07</version>
 		</dependency>
-		<!--	python	-->
-		<dependency>
-			<groupId>org.python</groupId>
-			<artifactId>jython-standalone</artifactId>
-			<version>2.7.0</version>
-		</dependency>
 		<!--email-->
 		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>mail</artifactId>
 			<version>1.4.1</version>
-		</dependency>
-		<!--微信-->
-		<dependency>
-			<groupId>com.github.wechatpay-apiv3</groupId>
-			<artifactId>wechatpay-apache-httpclient</artifactId>
-			<version>0.4.7</version>
-		</dependency>
-		<!--  定时任务框架quartz   -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-quartz</artifactId>
-		</dependency>
-		<!-- Apache POI(生成excel、word等文件) -->
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi</artifactId>
-			<version>4.1.2</version>
 		</dependency>
 	</dependencies>
 
