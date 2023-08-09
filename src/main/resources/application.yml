@@ -1,15 +1,2 @@
 server:
-    port: 9910
-    maxHttpHeaderSize: 10240
-    servlet:
-        context-path: /yy
-spring:
-    profiles:
-        active: local
-    servlet:
-        multipart:
-            maxFileSize: 50MB
-            maxRequestSize: 100MB
-    mvc:
-        async:
-            request-timeout: 60000
+    port: 8888

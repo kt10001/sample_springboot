@@ -26,13 +26,5 @@ public class RunApplication {
                 "Local: \t\thttp://localhost:" + port  + "/\n\t" +
                 "External: \thttp://" + ip + ":" + port  + "/\n\t" +
                 "----------------------------------------------------------");
-
-        // shutdown hook
-        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
-            @Override
-            public void run() {
-                log.info("执行 JVM ShutDownHook...");
-            }
-        }));
     }
 }
