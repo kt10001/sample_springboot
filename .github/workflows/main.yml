@@ -1,3 +1,10 @@
+name: test CI/CD
+
+on:
+  push:
+    branches: ["main"]
+  pull:
+    branches: ["main"]
 jobs:
   develop_build:
     runs-on: ubuntu-latest
