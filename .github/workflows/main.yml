@@ -5,7 +5,19 @@ name: test CI/CD
 #    branches: ["main"]
 #  pull_request:
 #    branches: ["main"]
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      fabEnv:
+        description: '发布环境'
+        required: true
+        default: 'sit'
+        type: choice
+        options:
+          - sit
+          - pre
+          - prod
+
 jobs:
   develop_build:
     runs-on: ubuntu-latest
