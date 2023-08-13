@@ -9,7 +9,7 @@ jobs:
   develop_build:
     runs-on: ubuntu-latest
     steps:
-      - name: 拉取最新提交的代码
+      - name: 拉取最新代码
         uses: actions/checkout@v3
 
       - name: 设置jdk
@@ -22,7 +22,7 @@ jobs:
       - name: 项目打包
         run: mvn -B package
 
-      - name: 上传jar包和启动脚本到服务器中
+      - name: 上传jar包和启动脚本到服务器
         run: sshpass -p ${{secrets.REMOTE_PWD}} scp -r -o StrictHostKeyChecking=no ./target/test.jar ./deploy.sh root@${{secrets.REMOTE_IP}}:/home/test/
 
       - name: 启动项目
