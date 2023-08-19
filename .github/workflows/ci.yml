@@ -19,6 +19,6 @@ jobs:
         run: java -jar main.jar
       - name: catch
         if: ${{ failure() }}
-          run: |
-            author=$(git show -s --format=%an)
-            curl 'https://oapi.dingtalk.com/robot/send?access_token=88baed316165329a24ecfa5d9af06d2de39504a21bd131bb0d49fb6379f2d499' -H 'Content-Type: application/json' -d '{"msgtype": "text","text": {"content":"我就是我, 是不一样的烟火通知"}}'
+        run: |
+          author=$(git show -s --format=%an)
+          curl 'https://oapi.dingtalk.com/robot/send?access_token=88baed316165329a24ecfa5d9af06d2de39504a21bd131bb0d49fb6379f2d499' -H 'Content-Type: application/json' -d '{"msgtype": "text","text": {"content":"我就是我, 是不一样的烟火通知"}}'
