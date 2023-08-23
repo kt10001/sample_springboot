@@ -6,22 +6,15 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: helloworld
+name: test fkisu
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  issues:
+    types: [opened, reopened, edited]
 
 jobs:
-  build:
-
+  job1:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
-    - name: step1
-      run: echo "hello"
-    - name: step2
-      run: echo "world"
+      - name: fkisu
+        uses: kt10001/issue_label@v2
