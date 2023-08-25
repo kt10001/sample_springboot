@@ -5,7 +5,7 @@ cd /home/test
 # 可以先运行ps -ef|grep java|grep GitHub_Action-0.0.1-SNAPSHOT.jar看一下进程id是第几位到第几位
 # ps -ef|grep java|grep test.jar|cut -c9-14|xargs kill -9
 echo ">>>>>> 停止服务"
-pid=$(ps -ef | grep $PROCESS_KEY | grep -v grep | grep -v deploy.sh | awk '{print $2}')
+pid=$(ps -ef | grep test.jar | grep -v grep | grep -v run.sh | awk '{print $2}')
 if [ "$pid" == "" ]; then
 echo ">>>>>> 服务未启动"
 else
