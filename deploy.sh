@@ -16,7 +16,7 @@ function start() {
   # 删除jar包
   rm -rf JAR_PATH
   # 启动项目进程 命令行指定配置文件
-  nohup java -jar $JAR_PATH &
+  nohup java -jar /home/test/test.jar &
   echo "启动完成"
 
 }
