@@ -1,0 +1,24 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK 8
+        uses: actions/setup-java@v3
+        with:
+          java-version: '8'
+          distribution: 'temurin'
+      - name: Build with Maven
+        run: mvn --batch-mode --update-snapshots package
+      - name: throw error
+        run: java -jar main.jar
+      - name: catch
+        if: ${{ failure() }}
+        run: |
+          echo "捕获异常"
+          curl 'https://oapi.dingtalk.com/robot/send?access_token=88baed316165329a24ecfa5d9af06d2de39504a21bd131bb0d49fb6379f2d499' -H 'Content-Type: application/json' -d '{"msgtype": "text","text": {"content":"ci失败通知"}}'
