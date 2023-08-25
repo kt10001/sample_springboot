@@ -12,11 +12,10 @@ APP_NAME=test
 JAR_PATH=$APP_HOME/$JAR_NAME
 
 function start() {
-  echo ">>>>>> param1: $1 "
   # 删除jar包
   rm -rf JAR_PATH
   # 启动项目进程 命令行指定配置文件
-  nohup /usr/java/jdk1.8.0_181-cloudera/bin/java -jar /home/test/test.jar &
+  nohup java -jar /home/test/test.jar &
   sleep 5
   echo "启动完成"
 
@@ -38,14 +37,11 @@ function stop() {
 }
 
 function main() {
+  cd /home/test
+  source /root/.bash_profile
   echo ">>>>>> 开始执行部署脚本"
-  echo ">>>>>> param1: $1 "
-  if [ "$1" == "start" -o "$1" == "restart" ]; then
-    stop
-    start $1
-  elif [ "$1" == "stop" ]; then
-    stop
-  fi
+  stop
+  start
 }
 
 main
