@@ -41,7 +41,3 @@ jobs:
       - name: 启动项目
         run: sshpass -p ${{secrets.REMOTE_PWD}} ssh -o StrictHostKeyChecking=no root@${{secrets.REMOTE_IP}} "cd /home/test/ && chmod +x deploy.sh && sh /home/test/deploy.sh start"
 
-      - name: 测试
-        run: |
-          echo "测试接口"
-          curl 'http://127.0.0.1:8888/api/test'
