@@ -36,7 +36,7 @@ jobs:
         run: mvn -B package
 
       - name: 上传jar包和启动脚本到服务器
-        run: sshpass -p ${{secrets.REMOTE_PWD}} scp -r -o StrictHostKeyChecking=no ./target/test.jar ./deploy.sh root@${{secrets.REMOTE_IP}}:/home/test/
+        run: sshpass -p ${{secrets.REMOTE_PWD}} scp -r -o StrictHostKeyChecking=no ./target/test.jar ./run.sh root@${{secrets.REMOTE_IP}}:/home/test/
 
       - name: 启动项目
         # run: sshpass -p ${{secrets.REMOTE_PWD}} ssh -o StrictHostKeyChecking=no root@${{secrets.REMOTE_IP}} "cd /home/test/ && chmod +x deploy.sh && ./deploy.sh start"
