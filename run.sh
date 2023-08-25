@@ -7,10 +7,10 @@ cd /home/test
 echo ">>>>>> 停止服务"
 pid=$(ps -ef | grep test.jar | grep -v grep | grep -v run.sh | awk '{print $2}')
 if [ "$pid" == "" ]; then
-echo ">>>>>> 服务未启动"
+    echo ">>>>>> 服务未启动"
 else
-kill -9 $pid
-echo ">>>>>> 服务停止完成"
+    kill -9 $pid
+    echo ">>>>>> 服务停止完成"
 fi
 # 停5秒
 sleep 5s
