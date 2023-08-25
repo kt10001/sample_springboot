@@ -15,7 +15,7 @@ function start() {
   # 删除jar包
   rm -rf JAR_PATH
   # 启动项目进程 命令行指定配置文件
-  nohup java -jar /home/test/test.jar &
+  nohup /usr/java/jdk1.8.0_181-cloudera/bin/java -jar /home/test/test.jar &
   sleep 5
   echo "启动完成"
 
