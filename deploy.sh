@@ -48,4 +48,4 @@ function main() {
   fi
 }
 
-main $1
+main
