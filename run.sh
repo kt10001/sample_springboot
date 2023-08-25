@@ -11,5 +11,5 @@ sleep 5s
 # 使环境变量生效
 source /root/.bash_profile
 # 运行项目
-nohup java -jar test.jar &
+nohup java -jar test.jar >/home/test/cicd.log 2>&1 &
 echo "启动完成"
