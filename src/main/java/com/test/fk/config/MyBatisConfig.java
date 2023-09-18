@@ -8,6 +8,6 @@ import org.springframework.context.annotation.Configuration;
  * Created by macro on 2019/4/8.
  */
 @Configuration
-@MapperScan("com.test.fk.mbg.mapper")
+@MapperScan({"com.test.fk.mbg.mapper", "com.test.fk.dao"})
 public class MyBatisConfig {
 }
