@@ -1,6 +1,6 @@
-package com.shouxin.yy.controller;
+package com.test.fk.controller;
 
-import com.shouxin.yy.service.TestService;
+import com.test.fk.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

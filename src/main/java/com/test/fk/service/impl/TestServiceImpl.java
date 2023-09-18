@@ -1,9 +1,8 @@
-package com.shouxin.yy.service.impl;
+package com.test.fk.service.impl;
 
-import com.shouxin.yy.service.RedisService;
-import com.shouxin.yy.service.TestService;
+import com.test.fk.service.RedisService;
+import com.test.fk.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 /**

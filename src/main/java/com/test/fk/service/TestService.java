@@ -1,4 +1,4 @@
-package com.shouxin.yy.service;
+package com.test.fk.service;
 
 /**
  * @author feikong
