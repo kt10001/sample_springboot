@@ -9,29 +9,28 @@ import org.junit.Test;
 public class FuncTest {
     @Test
     public void test() {
-        System.out.println(minCostClimbingStairs(new int[]{1,100,1,1,1,100,1,1,100,1}));
+
+        System.out.println();
     }
 
-    public int minCostClimbingStairs(int[] cost) {
-        int dp0 =0, dp1 = 0, dpi = 0;
-        for (int i=2; i<=cost.length; i++) {
-            dpi = Math.min(dp1 + cost[i-1], dp0 + cost[i-2]);
-            dp0 = dp1;
-            dp1 = dpi;
+    public int uniquePathsWithObstacles(int[][] obstacleGrid) {
+        int m = obstacleGrid.length, n = obstacleGrid[0].length;
+        int[][] dp = new int[m][n];
+        if (obstacleGrid[m - 1][n - 1] == 1 || obstacleGrid[0][0] == 1) {
+            return 0;
         }
-        return dpi;
-
+        for (int i = 0; i < m && obstacleGrid[i][0] == 0; i++) {
+            dp[i][0] = 1;
+        }
+        for (int j = 0; j < n && obstacleGrid[0][j] == 0; j++) {
+            dp[0][j] = 1;
+        }
+        for (int i = 1; i < m; i++) {
+            for (int j = 1; j < n; j++) {
+                dp[i][j] = (obstacleGrid[i][j] == 0) ? dp[i - 1][j] + dp[i][j - 1] : 0;
+            }
+        }
+        return dp[m - 1][n - 1];
     }
-
-//    public int climbStairs(int n) {
-//        int p = 0, q = 0, r = 1;
-//        for (int i = 1; i <= n; ++i) {
-//            p = q;
-//            q = r;
-//            r = p + q;
-//        }
-//        return r;
-//    }
-
 
 }
