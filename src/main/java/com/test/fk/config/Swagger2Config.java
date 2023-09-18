@@ -26,12 +26,6 @@ import java.util.List;
 public class Swagger2Config {
     @Bean
     public Docket createRestApi(){
-        ParameterBuilder tokenPar = new ParameterBuilder();
-        List<Parameter> pars = new ArrayList<>();
-        // token非必填
-        tokenPar.name("").description("token")
-                .modelRef(new ModelRef("string")).parameterType("header")
-                .required(false).build();
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
@@ -43,7 +37,7 @@ public class Swagger2Config {
 //                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
                 .paths(PathSelectors.any())
                 .build()
-                .globalOperationParameters(pars);
+                .globalOperationParameters(this.getParameterList());
     }
 
     private ApiInfo apiInfo() {
@@ -53,5 +47,19 @@ public class Swagger2Config {
                 .contact("macro")
                 .version("1.0")
                 .build();
+    }
+
+    /**
+     * 添加head参数配置
+     */
+    private List<Parameter> getParameterList() {
+        ParameterBuilder clientIdTicket = new ParameterBuilder();
+        List<Parameter> pars = new ArrayList<Parameter>();
+            clientIdTicket.name("Authorization").description("token令牌")
+                    .modelRef(new ModelRef("string"))
+                .parameterType("header")
+                    .required(false).build(); //设置false，表示clientId参数 非必填,可传可不传！
+            pars.add(clientIdTicket.build());
+            return pars;
     }
 }
