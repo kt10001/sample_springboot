@@ -1,2 +1,6 @@
 server:
     port: 8888
+
+aliyun:
+  accessKey: "123"
+  accessSecret: "456"

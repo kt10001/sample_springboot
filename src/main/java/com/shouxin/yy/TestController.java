@@ -16,4 +16,9 @@ public class TestController {
     public String test() {
         return "hello world";
     }
+
+    public String sayHello() {
+        String msg = "hello world";
+        return msg;
+    }
 }
